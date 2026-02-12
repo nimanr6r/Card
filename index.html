@@ -52,13 +52,13 @@
 
     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-    /* رنگ‌بندی طبق درخواست شما */
-    .phone { background: #2c3e50; }    /* تماس: سرمه‌ای */
-    .telegram { background: #0088cc; } /* تلگرام: آبی */
-    .whatsapp { background: #25d366; } /* واتساپ: سبز */
-    .insta { background: #e1306c; }    /* اینستاگرام: صورتی/قرمز */
-    .email { background: #f4b400; }    /* ایمیل: زرد */
-    .save  { background: #333333; }    /* ذخیره: مشکی/خاکستری تیره */
+    /* رنگ‌بندی */
+    .phone { background: #2c3e50; }    
+    .telegram { background: #0088cc; } 
+    .whatsapp { background: #25d366; } 
+    .insta { background: #e1306c; }    
+    .email { background: #f4b400; }    
+    .card-number { background: #2c3e50; } /* دکمه شماره کارت */
 
     hr { border: 0; border-top: 1px solid #eee; margin: 15px 0; }
   </style>
@@ -73,31 +73,40 @@
       <i class="fa-solid fa-phone"></i> تماس مستقیم
     </a>
 
-    <a class="btn telegram" href="https://t.me/Nima_Njn">
+    <a class="btn telegram" href="https://t.me/Nima_Njn" target="_blank">
       <i class="fa-brands fa-telegram"></i> تلگرام
     </a>
 
-    <a class="btn whatsapp" href="https://wa.me/989931879036">
-      <i class="fa-brands fa-whatsapp"></i> واتس‌اپ
+    <a class="btn whatsapp" href="https://wa.me/989931879036" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> واتساپ
     </a>
 
-    <a class="btn insta" href="https://instagram.com/nima_nj369">
+    <a class="btn insta" href="https://instagram.com/nima_nj369" target="_blank">
       <i class="fa-brands fa-instagram"></i> اینستاگرام
     </a>
 
-    <a class="btn email" href="mailto:nimanr6r@gmail.com">
+    <a class="btn email" href="mailto:nimanr6r@gmail.com" target="_blank">
       <i class="fa-solid fa-envelope"></i> ارسال ایمیل
     </a>
 
     <hr>
 
-    <a class="btn save" href="tel:09931879036">
-  <i class="fa-solid fa-user-plus"></i> ذخیره در مخاطبین
-</a>
+    <!-- دکمه شماره کارت بدون نمایش شماره واقعی -->
+    <button class="btn card-number" onclick="copyCardNumber()">
+      شماره کارت : نیما رضایی <i class="fa-solid fa-university"></i>
+    </button>
   </div>
 
+  <script>
+    function copyCardNumber() {
+      const cardNumber = "6037991234567890"; // شماره کارت واقعی پشت دکمه
+      navigator.clipboard.writeText(cardNumber).then(() => {
+        alert("شماره کارت کپی شد!");
+      }).catch(err => {
+        console.error("مشکل در کپی کردن شماره کارت:", err);
+      });
+    }
+  </script>
+
 </body>
-
 </html>
-
-
